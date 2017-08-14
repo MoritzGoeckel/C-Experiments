@@ -25,7 +25,7 @@ std::vector<double> PayoffManager::getOptionPayoffs(std::string informationset, 
 
     for(int opt : options){
       if(this->payoffs[informationset]->find(opt) != this->payoffs[informationset]->end()) //With double
-        out.push_back((*this->payoffs[informationset])[opt].payoff / (*this->payoffs[informationset])[opt].trials);
+        out.push_back((*this->payoffs[informationset])[opt].payoff / (double)(*this->payoffs[informationset])[opt].trials);
       else
         out.push_back(0);
     }
